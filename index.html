@@ -3,36 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VISION 360° | Auditoría Estratégica</title>
+    <title>VISION 360™ | Strategic Advisory Method</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         
         :root {
-            --navy: #163a5a;
-            --gray: #9aa0a6;
-            --indigo-primary: #4f46e5; /* El morado de BFIT 2026 */
+            --brand-blue: #183a5a;
+            --brand-gray: #9aa0a6;
+            --brand-radius: 22px;
         }
 
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        input[type="range"] { accent-color: var(--indigo-primary); }
+        
+        /* Input Range Color */
+        input[type="range"] { accent-color: var(--brand-blue); }
         
         .fade-in { animation: fadeIn 0.4s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* Botón de opción activa */
         .option-btn.active {
-            background-color: var(--indigo-primary);
-            border-color: var(--indigo-primary);
+            background-color: var(--brand-blue);
+            border-color: var(--brand-blue);
             color: white;
             font-weight: 700;
         }
 
-        /* Estilos del Logo VISION 360 con el nuevo color morado */
-        .logo-container {
+        /* --- ESTILOS DEL LOGO VISION 360™ --- */
+        .logo-main {
             display: inline-flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
+            gap: 8px;
             line-height: 1;
         }
 
@@ -40,95 +44,108 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid var(--indigo-primary); /* Cambiado a morado */
-            border-radius: 6px;
+            padding: 8px 14px;
+            border: 3px solid var(--brand-blue);
+            border-radius: 10px;
             background: #fff;
-            padding: 4px 8px;
         }
 
-        .logo-title {
+        .logo-wordmark {
+            color: var(--brand-blue);
             font-weight: 800;
-            color: var(--indigo-primary); /* Cambiado a morado */
-            font-size: 14px;
+            font-size: 22px;
+            letter-spacing: 0.3px;
             white-space: nowrap;
-            letter-spacing: 0.5px;
+        }
+
+        .logo-tm {
+            font-size: 0.4em;
+            vertical-align: super;
+            margin-left: 1px;
+            font-weight: 700;
         }
 
         .logo-subtitle {
-            font-weight: 400;
-            color: var(--gray);
-            font-size: 10px;
-            margin-top: 2px;
+            color: var(--brand-gray);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.1px;
+            text-align: center;
         }
 
-        /* Versión Grande para Bienvenida */
-        .logo-container--lg .logo-badge {
-            border-width: 6px;
-            border-radius: 14px;
-            padding: 12px 20px;
+        /* Versión Grande para Pantalla de Bienvenida */
+        .logo-lg { gap: 18px; }
+        .logo-lg .logo-badge {
+            padding: 22px 36px;
+            border-width: 10px;
+            border-radius: var(--brand-radius);
         }
-        .logo-container--lg .logo-title {
-            font-size: 42px;
-        }
-        .logo-container--lg .logo-subtitle {
-            font-size: 28px;
-            margin-top: 8px;
+        .logo-lg .logo-wordmark { font-size: 84px; }
+        .logo-lg .logo-subtitle { font-size: 42px; }
+
+        @media (max-width: 640px) {
+            .logo-lg .logo-badge { padding: 16px 22px; border-width: 6px; }
+            .logo-lg .logo-wordmark { font-size: 48px; }
+            .logo-lg .logo-subtitle { font-size: 24px; white-space: normal; }
         }
     </style>
 </head>
 <body class="bg-[#fafbfc] text-gray-900 pb-20 text-left">
 
+    <!-- Navbar -->
     <nav class="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <!-- Logo en Navbar (Morado) -->
-                <div class="logo-container">
+                <!-- Logo Pequeño Navbar -->
+                <div class="logo-main">
                     <div class="logo-badge">
-                        <div class="logo-title">VISION 360°</div>
+                        <div class="logo-wordmark text-sm">VISION 360<span class="logo-tm">TM</span></div>
                     </div>
-                    <div class="logo-subtitle">Estrategia & Perspectiva</div>
+                    <div class="logo-subtitle text-[8px]">Strategic Advisory Method</div>
                 </div>
             </div>
             <div class="hidden sm:block text-right">
-                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Auditoría 2026</span>
+                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Auditoría Estratégica 2026</span>
             </div>
         </div>
     </nav>
 
     <main id="main-container" class="max-w-3xl mx-auto px-4 py-10">
         <!-- Vista Bienvenida -->
-        <section id="view-welcome" class="flex flex-col items-center justify-center min-h-[70vh] text-center fade-in">
-            <!-- Logo Grande (Morado) -->
-            <div class="mb-12">
-                <div class="logo-container logo-container--lg">
-                    <div class="logo-badge shadow-xl shadow-indigo-100">
-                        <div class="logo-title uppercase">Vision 360°</div>
+        <section id="view-welcome" class="flex flex-col items-center justify-center min-h-[65vh] text-center fade-in">
+            <!-- Logo Grande Bienvenida -->
+            <div class="mb-14">
+                <div class="logo-main logo-lg" aria-label="VISION 360 trademark strategic advisory method">
+                    <div class="logo-badge shadow-2xl shadow-slate-200">
+                        <div class="logo-wordmark">
+                            VISION&nbsp;360<span class="logo-tm">TM</span>
+                        </div>
                     </div>
-                    <div class="logo-subtitle">Estrategia & Perspectiva</div>
+                    <div class="logo-subtitle">Strategic Advisory Method</div>
                 </div>
             </div>
             
             <h1 class="text-4xl font-black text-gray-900 mb-6 tracking-tight leading-tight">
-                Auditoría Estratégica <span class="text-indigo-600">BFIT 2026</span>
+                Análisis Profundo <span style="color: var(--brand-blue)">BFIT 2026</span>
             </h1>
-            <p class="text-lg text-gray-600 mb-10 leading-relaxed">
+            <p class="text-lg text-gray-600 mb-10 leading-relaxed max-w-xl">
                 Este cuestionario busca extraer la <b>verdad incómoda</b> de la marca antes de decidir el rumbo 2026–2028. <br>Tus respuestas se enviarán directamente al equipo de estrategia.
             </p>
-            <button onclick="startForm()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-10 rounded-2xl transition-all shadow-xl shadow-indigo-100 active:scale-95">
-                Empezar Cuestionario
+            <button onclick="startForm()" class="text-white font-bold py-5 px-12 rounded-2xl transition-all shadow-xl active:scale-95 flex items-center gap-3" style="background-color: var(--brand-blue)">
+                Empezar Cuestionario <i data-lucide="arrow-right" class="w-5 h-5"></i>
             </button>
-            <p class="mt-12 text-xs text-gray-400 font-medium uppercase tracking-widest italic text-center">Confidencial · Socios y Equipo Clave</p>
+            <p class="mt-12 text-xs text-gray-400 font-medium uppercase tracking-widest italic text-center">Propiedad Intelectual VISION 360™</p>
         </section>
 
         <!-- Vista Formulario -->
         <section id="view-form" class="hidden fade-in text-left">
-            <div class="mb-10">
-                <div class="flex justify-between mb-3 text-xs font-black text-indigo-600 uppercase">
+            <div class="mb-12">
+                <div class="flex justify-between mb-4 text-xs font-black uppercase tracking-tighter" style="color: var(--brand-blue)">
                     <span id="step-label">Sección 1 de 7</span>
                     <span id="progress-percent">0%</span>
                 </div>
                 <div class="w-full bg-gray-100 h-3 rounded-full overflow-hidden">
-                    <div id="progress-bar" class="bg-indigo-600 h-full transition-all duration-700 ease-out" style="width: 0%"></div>
+                    <div id="progress-bar" class="h-full transition-all duration-700 ease-out" style="width: 0%; background-color: var(--brand-blue)"></div>
                 </div>
             </div>
 
@@ -136,29 +153,31 @@
                 <!-- Inyección JS -->
             </div>
 
-            <div class="flex justify-between items-center">
-                <button id="btn-prev" onclick="prevStep()" class="flex items-center gap-2 px-6 py-4 text-gray-400 font-bold hover:text-indigo-600 transition-colors">
+            <div class="flex justify-between items-center px-2">
+                <button id="btn-prev" onclick="prevStep()" class="flex items-center gap-2 px-6 py-4 text-gray-400 font-bold hover:text-[#183a5a] transition-colors">
                     <i data-lucide="chevron-left" class="w-5 h-5"></i> Anterior
                 </button>
-                <button id="btn-next" onclick="nextStep()" class="flex items-center gap-2 px-10 py-4 bg-indigo-600 text-white rounded-2xl font-bold shadow-xl shadow-indigo-100 active:scale-95">
-                    Siguiente Sección <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                <button id="btn-next" onclick="nextStep()" class="text-white flex items-center gap-2 px-12 py-4 rounded-2xl font-bold shadow-xl transition-all active:scale-95" style="background-color: var(--brand-blue)">
+                    Siguiente <i data-lucide="chevron-right" class="w-5 h-5"></i>
                 </button>
-                <button id="btn-submit" onclick="submitForm()" class="hidden flex items-center gap-2 px-12 py-4 bg-green-600 text-white rounded-2xl font-bold shadow-xl shadow-green-100 active:scale-95">
-                    Enviar Finalizado <i data-lucide="send" class="w-4 h-4"></i>
+                <button id="btn-submit" onclick="submitForm()" class="hidden text-white flex items-center gap-2 px-14 py-4 rounded-2xl font-bold shadow-xl transition-all active:scale-95 bg-green-600">
+                    Enviar Diagnóstico <i data-lucide="send" class="w-4 h-4"></i>
                 </button>
             </div>
         </section>
 
         <!-- Vista Éxito -->
         <section id="view-success" class="hidden flex flex-col items-center justify-center min-h-[70vh] text-center fade-in">
-            <div class="bg-green-100 p-6 rounded-[40px] mb-8 animate-bounce">
+            <div class="p-6 rounded-[40px] mb-8 animate-bounce bg-green-50">
                 <i data-lucide="check-circle" class="w-16 h-16 text-green-600"></i>
             </div>
             <h1 class="text-4xl font-black text-gray-900 mb-6 tracking-tight">¡Diagnóstico Recibido!</h1>
             <p class="text-lg text-gray-600 max-w-md mb-12 leading-relaxed text-center">
-                Gracias por tu honestidad. Tus respuestas han sido enviadas vía correo electrónico para su procesamiento.
+                Gracias por tu honestidad. Tus respuestas han sido enviadas vía correo electrónico bajo el método <b>VISION 360™</b>.
             </p>
-            <button onclick="location.reload()" class="bg-gray-100 text-gray-600 font-bold py-3 px-8 rounded-xl">Volver al inicio</button>
+            <button onclick="location.reload()" class="bg-gray-100 text-gray-600 font-bold py-4 px-10 rounded-2xl hover:bg-gray-200 transition-colors">
+                Cerrar sesión
+            </button>
         </section>
     </main>
 
@@ -198,7 +217,7 @@
             {
                 title: "3 · Portafolio e Identidad",
                 questions: [
-                    { id: "Estandar_Calidad", label: "¿Debe BFIT tener un solo estándar o varios niveles (Silver/Premium)?", type: "select", options: ["Un solo estándar", "Varios niveles"] },
+                    { id: "Estandar_Calidad", label: "¿Debe BFIT tener un solo estándar de calidad o varios niveles (Silver/Premium)?", type: "select", options: ["Un solo estándar", "Varios niveles"] },
                     { id: "Omega3_Basico", label: "¿Un Omega 3 'básico' de BFIT sería:", type: "select", options: ["Estrategia inteligente", "Riesgo de dilución", "Traición a la promesa", "Evolución natural"] },
                     { id: "Limite_Adaptacion", label: "¿Dónde está el límite entre adaptarse y ser lo mismo que criticamos?", type: "textarea" }
                 ]
@@ -259,15 +278,15 @@
             document.getElementById('step-label').innerText = 'Sección ' + (currentStep + 1) + ' de ' + SECTIONS.length;
             document.getElementById('progress-percent').innerText = Math.round(progress) + '%';
 
-            let html = '<h2 class="text-2xl font-black mb-8 border-b pb-4 tracking-tight text-indigo-600">' + section.title + '</h2><div class="space-y-10">';
+            let html = '<h2 class="text-2xl font-black mb-8 border-b pb-4 tracking-tight" style="color: var(--brand-blue)">' + section.title + '</h2><div class="space-y-10">';
             
             section.questions.forEach(q => {
                 html += '<div class="space-y-3"><label class="block font-bold text-gray-800 leading-snug">' + q.label + '</label>';
                 
                 if (q.type === 'textarea') {
-                    html += '<textarea onchange="updateData(\'' + q.id + '\', this.value)" class="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-indigo-500 rounded-2xl outline-none min-h-[120px] transition-all text-gray-700 font-medium">' + (formData[q.id] || '') + '</textarea>';
+                    html += '<textarea onchange="updateData(\'' + q.id + '\', this.value)" class="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-[#183a5a] rounded-2xl outline-none min-h-[120px] transition-all text-gray-700 font-medium">' + (formData[q.id] || '') + '</textarea>';
                 } else if (q.type === 'select') {
-                    html += '<select onchange="updateData(\'' + q.id + '\', this.value)" class="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-indigo-500 rounded-2xl outline-none appearance-none cursor-pointer">';
+                    html += '<select onchange="updateData(\'' + q.id + '\', this.value)" class="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-[#183a5a] rounded-2xl outline-none appearance-none cursor-pointer">';
                     html += '<option value="">Selecciona una opción...</option>';
                     q.options.forEach(o => {
                         html += '<option value="' + o + '" ' + (formData[q.id] === o ? 'selected' : '') + '>' + o + '</option>';
@@ -277,13 +296,13 @@
                     html += '<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">';
                     q.options.forEach(opt => {
                         const active = (formData[q.id] || []).indexOf(opt) !== -1;
-                        html += '<button onclick="toggleCheckbox(\'' + q.id + '\', \'' + opt + '\')" class="option-btn text-left p-4 rounded-xl border-2 transition-all text-sm ' + (active ? 'active' : 'bg-white border-gray-100 text-gray-600 hover:border-indigo-200') + '">' + opt + '</button>';
+                        html += '<button onclick="toggleCheckbox(\'' + q.id + '\', \'' + opt + '\')" class="option-btn text-left p-4 rounded-xl border-2 transition-all text-sm ' + (active ? 'active' : 'bg-white border-gray-100 text-gray-600 hover:border-slate-300') + '">' + opt + '</button>';
                     });
                     html += '</div>';
                 } else if (q.type === 'range') {
                     const val = formData[q.id] || 5;
                     html += '<input type="range" min="' + q.min + '" max="' + q.max + '" value="' + val + '" oninput="updateData(\'' + q.id + '\', this.value); this.nextElementSibling.querySelector(\'.val\').innerText = this.value" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" style="cursor: pointer;">';
-                    html += '<div class="flex justify-between text-[10px] font-black text-gray-400 uppercase tracking-tighter"><span>Bajo</span><span class="text-indigo-600 text-lg">Nivel: <span class="val">' + val + '</span></span><span>Alto</span></div>';
+                    html += '<div class="flex justify-between text-[10px] font-black text-gray-400 uppercase tracking-tighter"><span>Bajo</span><span style="color: var(--brand-blue)" class="text-lg">Nivel: <span class="val">' + val + '</span></span><span>Alto</span></div>';
                 }
                 html += '</div>';
             });
@@ -326,12 +345,12 @@
                 } else {
                     alert("Error al enviar. Verifica tu conexión.");
                     btn.disabled = false;
-                    btn.innerText = "Enviar Finalizado";
+                    btn.innerText = "Enviar Diagnóstico";
                 }
             } catch (e) {
                 alert("Error de conexión.");
                 btn.disabled = false;
-                btn.innerText = "Enviar Finalizado";
+                btn.innerText = "Enviar Diagnóstico";
             }
         };
         
